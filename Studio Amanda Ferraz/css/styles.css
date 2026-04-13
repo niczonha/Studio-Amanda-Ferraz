@@ -561,3 +561,54 @@ body{
   padding: 15px;
   font-weight: bold;
 }
+
+.sobre{
+  padding: 20px 100px 0px 100px;
+}
+
+.titulo-sobre{
+  color: #A7510F;
+  font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.info-sobre{
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  font-size: 1.4rem;
+  font-family: "Urbanist", sans-serif;
+}
+
+.info-sobre-irmas{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 0px 0px 0px;
+}
+
+.info-sobre-irmas img #eduarda{
+  height: 80%;
+}
+
+.texto-sobre span{
+  color: #A7510F;
+}
+
+#prata{
+  text-align: center;
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+#name-profissional{
+  color: #A7510F;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+
