@@ -459,6 +459,13 @@ body{
 .location-title {
     margin-bottom: 1.5rem; 
     margin-top: 1rem;
+  text-align: center;
+}
+
+.localizacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .infomap{
