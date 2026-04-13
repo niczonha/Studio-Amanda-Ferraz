@@ -44,31 +44,31 @@ const reviews = [
     nome: "Raquel N.",
     nota: 5,
     comentario: "Ótimo espaço, cabelo com a Amanda e unhas com a Larissa amoo",
-    avatar: "../media/Curly hair-pana 1.png"
+    avatar: "../img/Curly hair-pana 1.png"
   },
   {
     nome: "Julia L.",
     nota: 5,
     comentario: "Maravilhosa! Primeira vez no salão hoje e nunca recebi uma escova tão bem feita. <3",
-    avatar: "../media/Hand sewing-pana.png"
+    avatar: "../img/Hand sewing-pana.png"
   },
   {
     nome: "Danielle S.",
     nota: 5,
     comentario: "Profissional maravilhosa e studio muito aconchegante.",
-    avatar: "../media/messy bun-pana.png"
+    avatar: "../img/messy bun-pana.png"
   },
   {
     nome: "Jennifer S.",
     nota: 5,
     comentario: "Atendimento muito maravilhoso",
-    avatar: "../media/messy bun-rafiki.png"
+    avatar: "../img/messy bun-rafiki.png"
   },
   {
     nome: "Gisele B.",
     nota: 5,
     comentario: "Design de sobrancelhas, Corte de cabelo: Muito simpática profissional rápida sem ficar enrolando no que tem que fazer ",
-    avatar: "../media/Self confidence-pana.png"
+    avatar: "../img/Self confidence-pana.png"
   }
 
 ];
