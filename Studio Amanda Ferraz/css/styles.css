@@ -28,31 +28,39 @@ body{
 /* NAVBAR */
 .navbar {
   display: flex;
+  font-size: 18px;
   justify-content: space-between;
   align-items: center;
-  background: #a7510f; /* COR DA NAV IGUAL NO TEMPLATE */
+  background: #a7510f;
   padding: 15px 40px;
-  color: white;
-  font-size: 22px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 
 .logo img {
-  height: 60px; /* controla o tamanho */
-  width: auto;
+  height: 55px; /* controla o tamanho */
+  display: flex;
+  margin-right: 10px;
 }
 
 .menu {
   list-style: none;
   display: flex;
-  margin-left: -150px;
-  gap: 40px;
+  gap: 30px;
+  margin-right: 15px;
 }
 
 .menu a {
   color: white;
   text-decoration: none;
 }
+
 
 .btn-agendar {
   background: #f5f0e6;
@@ -61,10 +69,9 @@ body{
   padding: 8px 15px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
   font-family: "Urbanist", sans-serif;
 }
-
 /* CARROSSEL */
 .carrossel {
   position: relative;
