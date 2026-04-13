@@ -348,7 +348,7 @@ body{
   font-family: 'Urbanist', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--creme);
+   color: var(--marrom);
   text-transform: uppercase;
 }
 
@@ -460,6 +460,7 @@ body{
     margin-bottom: 1.5rem; 
     margin-top: 1rem;
   text-align: center;
+   color: var(--marrom);
 }
 
 .localizacao {
@@ -483,6 +484,7 @@ body{
     width: 700px;
  margin: 0 auto;   
     border-radius: 12px; 
+   margin-bottom: 3rem;
 }
 
 
