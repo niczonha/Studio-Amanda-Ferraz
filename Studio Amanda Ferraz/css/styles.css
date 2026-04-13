@@ -588,8 +588,8 @@ body{
   padding: 30px 0px 0px 0px;
 }
 
-.info-sobre-irmas img #eduarda{
-  height: 80%;
+.info-sobre-irmas img{
+  border-radius: 24px;
 }
 
 .texto-sobre span{
