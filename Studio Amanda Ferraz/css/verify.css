@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", sans-serif;
+}
+
+:root {
+    --primary-color: #F5F0E6;
+    --secondary-color:#863B0A;
+    --text-color:#a7510f;
+}
+
+body{
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main{
+    background-color:#eee7d8 ;
+    width: 69%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 55px;
+    box-shadow: 0px 0px 10px 1px rgba(146, 146, 146, 0.356);
+    
+}
+
+.main .img{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img{ 
+    width: 135%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    height: 80%;
+}
+
+.info h4{
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+.info p{
+    font-size: 1.9rem;
+    color: var(--text-color);
+    font-weight: 550;
+}
+
+.info #redirecionamento{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 550;
+}

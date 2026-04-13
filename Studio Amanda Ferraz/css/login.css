@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", sans-serif;
+}
+
+:root {
+    --primary-color: #F5F0E6;
+    --secondary-color:#863B0A;
+    --text-color:#a7510f;
+}
+
+body{
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.Main-login{
+    background-color:#eee7d8 ;
+    width: 69%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 55px;
+    box-shadow: 0px 0px 10px 1px rgba(146, 146, 146, 0.356);
+}
+
+.Main-login .image{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img{ 
+    width: 135%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+.info .text{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+.info-dados{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.info-dados input{
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 1px rgba(146, 146, 146, 0.356);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.btn button{
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}

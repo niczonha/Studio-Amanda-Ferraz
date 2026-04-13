@@ -1,0 +1,571 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+    margin: 0;
+     font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+     background-color: #F5F0E6;
+}
+
+.container-dashboard{
+    display: flex;
+    min-height: 100vh;
+    
+}
+
+.menu-dashboard{
+    background-color: #A7510F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 20%;
+    min-width: 14rem;
+    max-width: 18rem;
+    color: #F5F0E6;
+    
+}
+
+.container-logo-menu{
+    padding: 2rem 0px 0px 0px;
+    
+}
+
+ #imagem-logo-menu {
+    width: 100%;
+    max-width: 15rem;
+}
+
+.icon-pessoa-menu p{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.links-menu-dashboard li{
+    list-style: none;
+}
+
+
+.links-menu-dashboard{
+   display: flex;
+   flex-direction: column;
+   gap: 2.5rem;
+   
+   margin-top: 3rem;
+}
+.links-menu-dashboard a{
+    text-decoration: none;
+    color: #F5F0E6;
+    padding-left: 2rem;
+    font-size: 1rem;
+     transition: 0.3s;
+}
+
+.links-menu-dashboard a:hover{
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+
+.home-dashboard {
+    flex: 1; 
+    background-color: #F5F0E6;
+    padding: 2rem;
+    
+}
+
+.divisao{
+    display: flex;
+}
+
+
+.boas-vindas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boas-vindas img{
+    width: 4%;
+    height: 4%;
+}
+
+.texto-boas-vindas{
+   
+    line-height: 35px;
+    color: #2A2424;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.cards-inicio .card{
+    border-radius: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+    padding: 1rem;
+}
+
+.cards-inicio .card .card-text{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.cards-inicio .card #card-menina{
+    max-width: 50%;
+}
+
+.cards-inicio .card .link-card{
+    background-color: #A7510F;
+    color: #F5F0E6;
+    padding: 10px 30px 10px 30px;
+    border-radius: 24px;
+    text-decoration: none;
+    margin-bottom: 20%;
+    font-weight: 700;
+    border: #A7510F 2px solid;
+}
+
+.cards-inicio .card .link-card:hover{
+    background-color: #F5F0E6;
+    color: #A7510F;
+    border: #A7510F 2px solid;
+    transition: 0.5s;
+    font-weight: 700;
+}
+
+.cards-inicio .card img{
+    width: 45%;
+    height: 45%;
+}
+
+.texto-cards-incio{
+    color: #A7510F;
+    font-size: 2rem;
+    max-width: 50%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+
+.cards-inicio{
+    display: flex;
+    gap: 2rem;
+}
+
+.cards-geral{
+    display: flex;
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+.cards-geral #texto-visao{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.cards-geral .card{
+    border-radius: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+    padding: 1rem;
+}
+
+
+.cards-geral .card ul{
+   display: flex;
+   flex-direction: column;
+   gap:20px;
+    list-style: none;
+    padding: 0;   
+    margin: 0;
+    font-weight: 700;
+
+}
+
+
+
+
+#cor-verde{
+    color: #41AF33;
+}
+
+.cards-geral .card #adicione-img{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.cards-geral .card #galeria-fotos{
+   width: 50%;
+   height: 50%;
+}
+
+.cards-geral .card .link-card{
+    background-color: #A7510F;
+    color: #F5F0E6;
+    padding: 10px 30px 10px 30px;
+    border-radius: 24px;
+    text-decoration: none;
+    margin-bottom: 20%;
+    font-weight: 700;
+    border: #A7510F 2px solid;
+}
+
+.cards-geral .card #mantenha{
+    font-weight: 700;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-menu {
+    display: none;
+    position: absolute; 
+    top: 15px;
+    right: 15px;
+    z-index: 2000;
+    font-size: 2rem;
+    background: #A7510F;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
+
+/* 📱 TABLET */
+@media (max-width: 1400px) {
+
+    .container-dashboard {
+        flex-direction: column;
+    }
+
+    .menu-dashboard {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .links-menu-dashboard {
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .home-dashboard {
+        padding: 1.5rem;
+    }
+
+    .cards-inicio {
+        flex-direction: column;
+    }
+
+    .texto-cards-incio {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .cards-geral {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    
+}
+
+/* 📱 CELULAR */
+@media (max-width: 768px) {
+
+    .menu-dashboard {
+        flex-direction: column;
+    }
+
+    .links-menu-dashboard {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .texto-boas-vindas{
+        text-align: left;
+    }
+
+      .boas-vindas img{
+       display: none;
+    }
+    .boas-vindas {
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .boas-vindas img {
+        width: 50px;
+        height: auto;
+    }
+
+    .texto-boas-vindas {
+        font-size: 1.5rem;
+        line-height: 28px;
+    }
+
+
+    .cards-inicio {
+        flex-direction: column-reverse;
+    }
+    .cards-inicio .card {
+        width: 100% !important;
+    }
+
+    .cards-geral {
+        flex-direction: column;
+
+    }
+
+    .cards-geral .card {
+        width: 100% !important;
+    }
+
+
+    .divisao {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .cards-inicio .card img,
+    #galeria-fotos {
+        width: 80%;
+        height: auto;
+    }
+
+    .cards-inicio .card .link-card{
+        margin-left: 25%;
+    }
+
+     .cards-geral .card .link-card {
+        margin-left: 25%;
+     }
+
+    .btn-menu {
+        display: block;
+  
+    }
+
+    .menu-dashboard {
+        position: fixed;
+        top: -100%;
+        left: 0;
+         width: 100%;
+        height: auto;
+       
+      
+        transition: 0.3s;
+        z-index: 999;
+        background-color: #A7510F;
+    padding: 1.5rem;
+    }
+
+    .menu-dashboard.ativo {
+        top: 0;
+    }
+
+    .home-dashboard {
+        padding-top: 60px;
+    }
+}
+
+.adc_servico{
+    width: 879px;
+    height: 576px;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 5%;
+    border-radius: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+    padding: 2rem;
+}
+
+.adc_servico p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.divisao-form{
+    display: flex;
+    gap: 2rem;
+}
+
+
+.formulario_adicionar{
+       width: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+
+.formulario_adicionar form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+.formulario_adicionar input{
+     padding: 1rem;
+     border-radius: 24px;
+     border: 1px solid #A7510F;
+}
+
+.formulario_adicionar label{
+    font-weight: 600;
+}
+.formulario_adicionar .titulo{
+    padding: 3rem;
+}
+
+.inserir_img{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    width: 300px;
+    background-color: #8a420c;
+    border-radius: 24px;
+    
+    height: 20rem;
+}
+
+.inserir_img img{
+    width: 80%;
+}
+
+.inserir_img h6{
+    color: #F5F0E6;
+}
+
+.custom-file {
+    background-color: #A7510F;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 24px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    width: 150px;
+   
+}
+
+.custom-file:hover {
+    background-color: #8a420c;
+}
+
+.btn_enviar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8a420c;
+    width: 100px;
+    padding: 10px 100px;
+    border-radius: 24px;
+   
+}
+
+button{
+    border: none;
+    color: #F5F0E6;
+}
+
+ a:hover {
+    background-color: #A7510F;
+    transition: 0.5s;
+    color: #F5F0E6;
+}
+
+.modal-preview {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-conteudo {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 24px;
+    width: 350px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    border: none; /* Dialog vem com borda por padrão, remova aqui */
+}
+
+/* Estilizando o fundo escuro de forma simples */
+.modal-conteudo::backdrop {
+    background: rgba(0,0,0,0.4);
+}
+.modal-conteudo h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Estilo do Modal de Logout */
+#modal-logout {
+    border: none;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 24px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+
+#modal-logout::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px); /* Efeito de desfoque no fundo */
+}
+
+.modal-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-confirmar {
+    background-color: #A7510F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cancelar {
+    background-color: #eee;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    color: #8a420c;
+     font-weight: bold;
+
+}

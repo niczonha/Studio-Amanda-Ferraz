@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  --marrom: #A7510F;
+  --m-escuro: #863B0A;
+  --m-claro: #D08C60;
+  --creme: #F5F0E6;
+  --bege: #E3D5C3;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+   font-family: "Urbanist", sans-serif;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('fonts/Urbanist/Urbanist-VariableFont_wght.ttf');
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #a7510f; /* COR DA NAV IGUAL NO TEMPLATE */
+  padding: 15px 40px;
+  color: white;
+  font-size: 22px;
+}
+
+
+.logo img {
+  height: 60px; /* controla o tamanho */
+  width: auto;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin-left: -150px;
+  gap: 40px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-agendar {
+  background: #f5f0e6;
+  color: #8b4513;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* CARROSSEL */
+.carrossel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* BOTÕES */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.servicos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 40px;
+  background: #f5f0e6;
+}
+
+/* IMAGEM LATERAL */
+.imagem-lateral img {
+  width: 250px;
+  opacity: 0.9;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+
+}
+
+.card {
+  background: #e6d7c8;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+}
+
+.destaque {
+    background-color: #f5f0e6;
+}
+
+/* ÍCONE */
+.icone {
+  background: #a0522d;
+  color: white;
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+/* ESPELHO DENTRO DO ÍCONE MARROM DO CARD*/
+.icone img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* TEXTOS DOS CARDS */
+.card h3 {
+  color: #a0522d;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.header-alisamento{
+    margin-top: 3rem;
+    padding: 2.5rem 0 1.5rem; 
+    font-family: 'Urbanist' , sans-serif;
+    font-size: 1.4rem;
+    font-weight: 680;
+    color: var(--marrom);
+    text-transform:uppercase ;
+    text-align: center;
+    margin-bottom: 0.5rem;
+     background: var(--beige);
+    padding: 0 4rem 3rem;
+
+}
+
+.group{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 24px; 
+  max-width: 1100px;   
+  margin: 0 auto;
+}
+
+.service-card{
+    display: flex;
+  flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    align-self: start;
+
+}
+.service-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.service-card:hover .service-img img{
+    transform: scale(1.04);
+}
+
+.service-img{
+    margin: 0.8rem 0.8rem 0; /* PODE SER ALTERADO MAIS PRA FRENTE*/
+    height: 150px;
+    overflow: hidden;
+     border-radius: 8px; 
+
+}
+
+.service-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+}
+
+.service-info{
+      flex: 1;
+  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.9rem 1rem 1.1rem;
+}
+
+.service-info h3{
+     font-family: 'Urbanist', sans-serif;
+     font-size: 1.0rem;
+     font-weight: 700;
+     color: var(--brown);
+     margin-bottom: 0.45rem;
+     line-height: 1.3
+
+}
+
+.service-info p{
+    font-size: 0.8rem;
+    color: #444;
+}
+
+.service-btn{
+    margin-top: 10px;
+  display: inline-block;
+  background: var(--m-escuro);
+  color: #fff;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  transition: background 0.2s; 
+  align-items: center;
+}
+.service-btn :hover{
+    background: var(--marrom);
+}
+
+/*           >>>>>>>>>>>>>>>>>> CILIOS <<<<<<<<<<<<<<<<<<          */
+.header-cilios{
+    margin-top: 3rem;
+    padding: 2.5rem 0 1.5rem; 
+    font-family: 'Urbanist' , sans-serif;
+    font-size: 1.4rem;
+    font-weight: 680;
+    color: var(--marrom);
+    text-transform:uppercase ;
+    text-align: center;
+    margin-bottom: 0.5rem;
+     background: var(--beige);
+    padding: 0 4rem 3rem;
+
+}
+
+.cilios-section {
+  padding: 0 4rem 3rem; 
+}
+
+.cilios-grid {
+  gap: 24px;            
+  max-width: 1100px;   
+  margin: 0 auto;       
+}
+
+
+  /*           >>>>>>>>>>>>>>>>>> RESPONSIVO <<<<<<<<<<<<<<<<<<          */
+
+
+@media (max-width: 768px) {
+  .group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;  
+  }
+
+  .service-info {
+    flex: 1;                
+    display: flex;
+    flex-direction: column; 
+  }
+
+  .service-img {
+    height: 160px;
+  }
+
+  .cilios-section {
+    padding: 0 1rem 2rem;
+  }
+}
+
+.ratings {
+  margin-top: 3rem;
+  padding: 2.5rem 0 1.5rem;
+  text-align: center;
+}
+
+.ratings .title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--creme);
+  text-transform: uppercase;
+}
+
+
+#reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+.review-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+/* AVATAR */
+.review-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.review-avatar{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    background: var(--bege);
+    flex-shrink: 0;
+}
+
+.review-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+.review-nome {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--marrom);
+
+  margin-bottom: 4px;
+}
+
+/* Estrelas biblioteca */
+.review-estrelas {
+   
+  margin-bottom: 8px;
+}
+
+.review-estrelas i {
+    
+  color: #f5b301;
+  font-size: 0.85rem;
+  margin-right: 2px;
+}
+
+
+.review-texto {
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.4;
+}
+/* BOTÃO */
+
+.see-more-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.see-more-btn {
+  display: inline-block;
+  background: var(--creme);
+  color: var(--m-escuro);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+
+@media (max-width: 768px) {
+  #reviews {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feedbacks {
+    padding: 0 1rem 2rem;
+  }
+}
+
+
+.location-title {
+    margin-bottom: 1.5rem; 
+    margin-top: 1rem;
+}
+
+.infomap{
+
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    color: var(--m-escuro);
+}
+
+
+#map{
+    height:400px;
+    width: 700px;
+ margin: 0 auto;   
+    border-radius: 12px; 
+}
+
+
+
+
+@media (max-width: 768px) {
+    #map {
+        width: 95%;    
+        height: 300px;   
+    }
+}
+
+/*------------------------FOOTER------------------------*/
+.footer {
+  background: #a7510f;
+  color: white;
+  font-weight: bold;
+  
+}
+
+/* CONTAINER */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+.footer-logo img {
+  margin-top: 50px;
+  height: 50px;
+}
+
+
+
+/* LINKS */
+.footer-links ul {
+  list-style: none;
+  opacity: 70%;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* PAGAMENTOS */
+.footer-pagamentos h3 {
+  margin-bottom: 15px;
+}
+
+.footer-pagamentos p {
+  margin-bottom: 15px;
+}
+
+.footer-pagamentos img{
+    margin-right: 5px;
+    width: 15px;
+}
+
+/* ENDEREÇO */
+.footer-endereco {
+  max-width: 200px;
+}
+
+.footer-endereco img{
+    width: 15px;
+}
+
+/* BARRA FINAL */
+.footer-bottom {
+  background: #d08c60;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
