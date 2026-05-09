@@ -775,7 +775,7 @@ body{
   }
 }
 
-/* Desktop: 3 cards 
+/* Desktop: 3 cards */
 @media (min-width: 1024px) {
   .services .swiper-slide {
     width: calc((100% - 76px) / 3) !important;
@@ -784,71 +784,4 @@ body{
   }
 }
 
-.feedbacks #reviews {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 24px !important;
-  width: min(100%, 1100px) !important;
-  max-width: 1100px !important;
-  margin: 0 auto !important;
-}
 
-.feedbacks .review-card {
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-@media (max-width: 900px) {
-  .feedbacks {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-
-  .feedbacks #reviews {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 14px !important;
-    width: 100% !important;
-    max-width: 720px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .feedbacks #reviews {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
-  }
-
-  .feedbacks .review-card {
-    padding: 10px !important;
-    border-radius: 10px !important;
-  }
-
-  .feedbacks .review-header {
-    gap: 7px !important;
-    margin-bottom: 7px !important;
-  }
-
-  .feedbacks .review-avatar {
-    width: 36px !important;
-    height: 36px !important;
-  }
-
-  .feedbacks .review-nome {
-    font-size: 0.78rem !important;
-    margin-bottom: 2px !important;
-  }
-
-  .feedbacks .review-estrelas {
-    margin-bottom: 5px !important;
-  }
-
-  .feedbacks .review-estrelas i {
-    font-size: 0.68rem !important;
-    margin-right: 0 !important;
-  }
-
-  .feedbacks .review-texto {
-    font-size: 0.68rem !important;
-    line-height: 1.22 !important;
-  }
-}
