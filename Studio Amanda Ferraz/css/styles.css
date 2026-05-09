@@ -757,7 +757,7 @@ body{
   align-items: stretch;
 }
 
-/* Celulares e tablets: 2 cards visíveis */
+/* Celular */
 @media (max-width: 767px) {
   .services .swiper-slide {
     width: calc((100% - 12px) / 2) !important;
@@ -766,7 +766,7 @@ body{
   }
 }
 
-/* Tablets maiores: continua 2 cards visíveis */
+/* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   .services .swiper-slide {
     width: calc((100% - 24px) / 2) !important;
@@ -775,7 +775,7 @@ body{
   }
 }
 
-/* Desktop: 3 cards visíveis */
+/* Desktop: 3 cards 
 @media (min-width: 1024px) {
   .services .swiper-slide {
     width: calc((100% - 76px) / 3) !important;
