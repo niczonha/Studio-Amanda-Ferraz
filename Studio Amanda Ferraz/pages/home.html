@@ -115,6 +115,8 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
     </div>
  
     <div class="swiper-section">
+      <div class="swiper-button-prev" id="prev-alisamento"></div>
+      <div class="swiper-button-next" id="next-alisamento"></div>
       <div class="slide-content swiper" id="swiper-alisamento">
         <div class="swiper-wrapper">
  
@@ -155,7 +157,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
             </div>
             <div class="swiper-card-content">
               <h3>Tratamentos Capilares</h3>
-              <p>Para quem precisa de cuidados específicos. Os tratamentos promovem hidratação, deixando os fios mais saudáveis.</p>
+              <p>Para quem precisa de cuidados específicos. O tratamento promove hidratação, deixando os fios saudáveis.</p>
               <a href="https://www.instagram.com/studioamandaferraz/" class="service-btn" target="_blank">SAIBA MAIS</a>
             </div>
           </div>
@@ -183,7 +185,8 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
             </div>
             <div class="swiper-card-content">
               <h3>Finalização</h3>
-              <p>Fios alinhados e saudáveis com redução do frizz. Brilho, maciez e resultado profissional.</p>
+              <p>Fios alinhados e saudáveis, com redução do frizz. Brilho intenso e maciez. Ideal para quem busca definição e cuidado diário.
+</p>
               <a href="https://www.instagram.com/studioamandaferraz/" class="service-btn" target="_blank">SAIBA MAIS</a>
             </div>
           </div>
@@ -203,9 +206,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
           </div>
  
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" id="pag-alisamento"></div>
       </div>
     </div>
   </section>
@@ -216,6 +217,8 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
     </div>
  
     <div class="swiper-section">
+      <div class="swiper-button-prev" id="prev-cilios"></div>
+      <div class="swiper-button-next" id="next-cilios"></div>
       <div class="slide-content swiper" id="swiper-cilios">
         <div class="swiper-wrapper">
  
@@ -228,7 +231,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
             </div>
             <div class="swiper-card-content">
               <h3>Volume Brasileiro</h3>
-              <p>Efeito natural e elegante, com leve volume e alongamento. Realça o olhar de forma suave e delicada.</p>
+              <p>Efeito natural com leve volume e alongamento. Realça o olhar de forma suave e delicada seus dos cílios.</p>
               <a href="https://www.instagram.com/cilioseduardaferraz/" class="service-btn" target="_blank">SAIBA MAIS</a>
             </div>
           </div>
@@ -242,7 +245,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
             </div>
             <div class="swiper-card-content">
               <h3>Volume Egípcio</h3>
-              <p>Visual marcante e sofisticado, com mais densidade e definição. Deixa os cílios mais volumosos e expressivos.</p>
+              <p>Visual marcante e sofisticado, com mais densidade e definição. Deixando os cílios bem mais volumosos.</p>
               <a href="https://www.instagram.com/cilioseduardaferraz/" class="service-btn" target="_blank">SAIBA MAIS</a>
             </div>
           </div>
@@ -270,7 +273,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
             </div>
             <div class="swiper-card-content">
               <h3>Volume 4D</h3>
-              <p>Mais volume com leveza e definição. Cria um olhar destacado sem pesar, ótimo pro dia a dia.</p>
+              <p>Mais volume e textura com leveza e definição. Cria um olhar destacado sem pesar, ótimo pro dia a dia.</p>
               <a href="https://www.instagram.com/cilioseduardaferraz/" class="service-btn" target="_blank">SAIBA MAIS</a>
             </div>
           </div>
@@ -284,7 +287,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
             </div>
             <div class="swiper-card-content">
               <h3>Volume 5D</h3>
-              <p>Volume intenso e bem preenchido. Ideal para um olhar mais dramático e impactante.</p>
+              <p>Volume intenso e bem preenchido. Ideal para um olhar mais dramático, performático e impactante.</p>
               <a href="https://www.instagram.com/cilioseduardaferraz/" class="service-btn" target="_blank">SAIBA MAIS</a>
             </div>
           </div>
@@ -304,9 +307,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
           </div>
  
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" id="pag-cilios"></div>
       </div>
     </div>
   </section>
@@ -316,7 +317,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
     <h2 class="title">AVALIAÇÕES DAS CLIENTES</h2>
 </div>
 
-<div class = "group" id="reviews"></div>
+<div id="reviews"></div>
 
 <!-- botão de avaliação-->
 <div class="see-more-container">
@@ -384,21 +385,29 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-    const swiperConfig = {
-      spaceBetween: 38,
+    new Swiper("#swiper-alisamento", {
       loop: true,
       grabCursor: true,
-      pagination: { el: ".swiper-pagination", clickable: true, dynamicBullets: true },
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      pagination: { el: "#pag-alisamento", clickable: true, dynamicBullets: true },
+      navigation: { nextEl: "#next-alisamento", prevEl: "#prev-alisamento" },
       breakpoints: {
-        0:    { slidesPerView: 2, spaceBetween: 12 },
+        0:    { slidesPerView: 1, spaceBetween: 12 },
         768:  { slidesPerView: 2, spaceBetween: 24 },
         1024: { slidesPerView: 3, spaceBetween: 38 },
       }
-    };
- 
-    new Swiper("#swiper-alisamento", swiperConfig);
-    new Swiper("#swiper-cilios", swiperConfig);
+    });
+
+    new Swiper("#swiper-cilios", {
+      loop: true,
+      grabCursor: true,
+      pagination: { el: "#pag-cilios", clickable: true, dynamicBullets: true },
+      navigation: { nextEl: "#next-cilios", prevEl: "#prev-cilios" },
+      breakpoints: {
+        0:    { slidesPerView: 1, spaceBetween: 12 },
+        768:  { slidesPerView: 2, spaceBetween: 24 },
+        1024: { slidesPerView: 3, spaceBetween: 38 },
+      }
+    });
   </script>
 
   </body>
