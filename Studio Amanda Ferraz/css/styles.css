@@ -187,7 +187,7 @@ body{
     .services .title {
       text-align: center;
       color: var(--marrom);
-      font-size: 1.4rem;
+      font-size: 3rem;
       font-weight: 700;
       text-transform: uppercase;
       margin: 0 0 1.5rem;
@@ -297,7 +297,7 @@ body{
     }
 
     .services .swiper-card-content h3 {
-      font-size: 16px;
+      font-size: 36px;
       font-weight: 700;
       color: #A7510F;
       margin: 0;
@@ -305,7 +305,7 @@ body{
     }
 
     .services .swiper-card-content p {
-      font-size: 13px;
+      font-size: 26px;
       color: #4f4f4f;
       line-height: 1.2;
       margin: 0;
@@ -317,16 +317,17 @@ body{
       justify-content: center;
       min-width: 100px;
       margin-top: 2px;
-      padding: 8px 18px;
+      padding: 16px 28px;
       border-radius: 4px;
       background: #A7510F;
       color: #fff;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: 0;
       text-decoration: none;
       text-transform: uppercase;
       transition: background 0.2s ease, transform 0.2s ease;
+       font-size: 26px;
     }
 
     .services .swiper-card-content .service-btn:hover {
@@ -346,7 +347,7 @@ body{
 
     .swiper-button-next::after,
     .swiper-button-prev::after {
-      font-size: 13px;
+      font-size: 18px;
       font-weight: 700;
       color: #A7510F !important;
     }
@@ -385,19 +386,19 @@ body{
       }
 
       .services .swiper-card-content h3 {
-        font-size: 12px;
+        font-size: 22px;
       }
 
       .services .swiper-card-content p {
-        font-size: 9px;
-        line-height: 1.15;
+        font-size: 16px;
+        line-height: 1.6;
       }
 
       .services .swiper-card-content .service-btn {
-        min-width: 68px;
-        padding: 6px 9px;
-        font-size: 7px;
-        margin-top: 0;
+        min-width: 100px;
+        padding: 9px 18px;
+        font-size: 14px;
+        margin-top: 6px;
       }
     }
 
@@ -438,6 +439,7 @@ body{
       }
     }
 
+/* --- DESKTOP --- */
 .ratings {
   margin-top: 3rem;
   padding: 2.5rem 0 1.5rem;
@@ -446,11 +448,12 @@ body{
 
 .ratings .title {
   font-family: 'Urbanist', sans-serif;
-  font-size: 1.4rem;
+  font-size: 64px;   /* título maior no desktop */
   font-weight: 700;
-   color: var(--marrom);
+  color: var(--marrom);
   text-transform: uppercase;
 }
+
 
 
 #reviews {
@@ -461,138 +464,134 @@ body{
   margin: 0 auto;
 }
 
-
 .review-card {
   background: #fff;
   border-radius: 12px;
-  padding: 15px;
+  padding: 22px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: transform 0.2s ease;
 }
 
 .review-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.07);
 }
-/* AVATAR */
-.review-header{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-.review-avatar{
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top center;
-    background: var(--bege);
-    flex-shrink: 0;
+
+/* Avatar */
+.review-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bege);
 }
 
-.review-info{
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-
+/* Nome */
 .review-nome {
   font-family: 'Urbanist', sans-serif;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.6rem; /* maior */
   color: var(--marrom);
-
-  margin-bottom: 4px;
-}
-
-/* Estrelas biblioteca */
-.review-estrelas {
-   
   margin-bottom: 8px;
 }
 
+/* Estrelas */
 .review-estrelas i {
-    
   color: #f5b301;
-  font-size: 0.85rem;
-  margin-right: 2px;
+  font-size: 1.5rem; /* maior */
+  margin-right: 4px;
 }
 
-
+/* Texto */
 .review-texto {
-  font-size: 0.8rem;
+  font-size: 1.5rem; /* comentários bem grandes */
   color: #444;
-  line-height: 1.4;
-}
-/* BOTÃO */
-
-.see-more-container {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.see-more-btn {
-  display: inline-block;
-  background: var(--creme);
-  color: var(--m-escuro);
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 20px;
-  transition: 0.2s;
+  line-height: 1.8;
 }
 
 
+/* --- MOBILE --- */
 @media (max-width: 768px) {
   #reviews {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
 
-  .feedbacks {
-    padding: 0 1rem 2rem;
+  /* As 4 primeiras reviews ocupam metade da largura (2 por linha) */
+  #reviews .review-card:nth-child(-n+4) {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+  /* Última review ocupa a linha inteira e centraliza */
+  #reviews .review-card:last-child {
+    flex: 1 1 100%;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .review-card {
-    padding: 12px;
-  }
-
-  .review-header {
-    gap: 8px;
-    margin-bottom: 8px;
+    padding: 20px;
   }
 
   .review-avatar {
-    width: 42px;
-    height: 42px;
+    width: 80px;
+    height: 80px;
   }
 
   .review-nome {
-    font-size: 0.85rem;
-  }
-
-  .review-estrelas {
-    margin-bottom: 6px;
+    font-size: 1.5rem; /* nome maior no celular */
   }
 
   .review-estrelas i {
-    font-size: 0.72rem;
-    margin-right: 0;
+    font-size: 1.4rem; /* estrelas maiores */
   }
 
   .review-texto {
-    font-size: 0.72rem;
-    line-height: 1.25;
+    font-size: 1.4rem; /* comentários grandes e confortáveis */
+    line-height: 1.9;
   }
+
+  .ratings .title {
+    font-size: 54px; /* título ainda grande no mobile */
+  }
+}
+
+.see-more-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Botao Avalie Tmb */
+.see-more-btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--marrom);   /* cor principal */
+  color: #fff;                       /* texto branco */
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;               /* bordas arredondadas */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Hover */
+.see-more-btn:hover {
+  background-color: #a0522d;         /* tom mais claro/escuro do marrom */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
 
 .location-title {
+  font-size: 50px;
     margin-bottom: 1.5rem; 
-    margin-top: 1rem;
+    margin-top: 7rem;
   text-align: center;
    color: var(--marrom);
 }
@@ -604,29 +603,54 @@ body{
 }
 
 .infomap{
-
+font-size: 30px;
     max-width: 600px;
     text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
+    margin-bottom: 5rem;
     color: var(--m-escuro);
 }
 
 
 #map{
-    height:400px;
+    height:500px;
     width: 700px;
  margin: 0 auto;   
     border-radius: 12px; 
    margin-bottom: 3rem;
 }
 
+.leaflet-popup-content {
+  font-size: 5.2rem;   /* aumenta o tamanho da fonte */
+  line-height: 2.6;    /* melhora a legibilidade */
+  font-weight: 300;    /* deixa mais destacado */
+  color: #863B0A;      /* combina com sua paleta */
+}
+
+.leaflet-popup-content b {
+  font-size: 1.5rem;
+   margin: 1px 0; 
+  color: #A7510F;
+}
+
+.leaflet-popup-content a{
+  font-size: 1.5rem;
+   margin: 1px 0; 
+  color: #A7510F;
+}
+
+.leaflet-popup-content p {
+  font-size: 1.4rem;
+   margin: 1px 0; 
+  color: #000000;
+}
+
+
 
 
 
 @media (max-width: 768px) {
     #map {
-        width: 95%;    
+        width: 100%;    
         height: 300px;   
     }
 }
@@ -783,5 +807,3 @@ body{
     max-width: calc((100% - 76px) / 3) !important;
   }
 }
-
-
