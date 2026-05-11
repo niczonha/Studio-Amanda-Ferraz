@@ -9,25 +9,44 @@
      crossorigin=""/>
   
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 <body>
   <!-- NAVBAR -->
   <header>
-    <nav class="navbar">
-        <div class="logo"> <img src="./../img/Studio Logo.png" alt="Logo do Studio">
-        </div>
+  <nav class="navbar">
 
-      <ul class="menu">
-        <li><a href="../pages/home.html">HOME</a></li>
-        <li><a href="#sobre">SOBRE</a></li>
-        <li><a href="#alisamento">SERVIÇOS</a></li>
-        <li><a href="#localizacao">LOCALIZAÇÃO</a></li>
-      </ul>
+    <div class="logo">
+      <img src="./../img/Studio Logo.png" alt="Logo do Studio">
+    </div>
 
-      <button class="btn-agendar">AGENDAR</button>
-    </nav>
-  </header>
+    <!-- BOTÃO HAMBURGUER -->
+  <div class="hamburguer" id="hamburguer">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+    <!-- MENU -->
+    <ul class="menu" id="menu">
+      <li><a href="../pages/home.html">HOME</a></li>
+      <li><a href="#sobre">SOBRE</a></li>
+      <li><a href="#alisamento">SERVIÇOS</a></li>
+      <li><a href="#localizacao">LOCALIZAÇÃO</a></li>
+
+      <!-- BOTÃO NO MOBILE -->
+      <li class="mobile-btn">
+        <button class="btn-agendar">AGENDAR</button>
+      </li>
+    </ul>
+
+    <!-- BOTÃO DESKTOP -->
+    <button class="btn-agendar desktop-btn">AGENDAR</button>
+
+  </nav>
+</header>
+
 
   <!-- CARROSSEL -->
   <section class="carrossel">
@@ -383,7 +402,15 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
 </footer>
   <script src="./../js/script.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  const hamburguer = document.getElementById('hamburguer');
+  const menu = document.querySelector('.menu');
 
+  hamburguer.addEventListener('click', () => {
+    hamburguer.classList.toggle('ativo');
+    menu.classList.toggle('ativo');
+  });
+  </script>
 <script>
     new Swiper("#swiper-alisamento", {
       loop: true,
