@@ -15,6 +15,7 @@ html {
 
 body{
    font-family: "Urbanist", sans-serif;
+   background-color: var(--creme);
    padding-top: 75px; /*Pra nav não engolir a beira do site */
 }
 
@@ -379,7 +380,17 @@ html, body {
       color: #4f4f4f;
       line-height: 1.2;
       margin: 0;
+   
     }
+    .services .swiper-card-content b {
+      font-size: 26px;
+      color: #4f4f4f;
+      line-height: 1.2;
+      margin: 0;
+      margin-top: 10px;
+       margin-bottom: 10px;
+    }
+
 
     .services .swiper-card-content .service-btn {
       display: inline-flex;
@@ -432,8 +443,22 @@ html, body {
       }
 
       .swiper-section {
-        padding: 0 28px 2rem;
+        padding: 0 40px 2rem;
       }
+
+     .swiper-button-next,
+     .swiper-button-prev {
+         width: 28px;
+       height: 28px;
+      }
+
+     .swiper-button-next {
+         right: 4px;
+        }
+
+      .swiper-button-prev {
+            left: 4px;
+          }
 
       .slide-content {
         padding: 12px 6px 72px;
@@ -461,6 +486,13 @@ html, body {
 
       .services .swiper-card-content p {
         font-size: 16px;
+        line-height: 1.6;
+
+    
+      }
+
+       .services .swiper-card-content b {
+        font-size: 20px;
         line-height: 1.6;
       }
 
@@ -851,32 +883,7 @@ font-size: 30px;
   align-items: stretch;
 }
 
-/* Celular */
-@media (max-width: 767px) {
-  .services .swiper-slide {
-    width: calc((100% - 12px) / 2) !important;
-    flex: 0 0 calc((100% - 12px) / 2) !important;
-    max-width: calc((100% - 12px) / 2) !important;
-  }
-}
 
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .services .swiper-slide {
-    width: calc((100% - 24px) / 2) !important;
-    flex: 0 0 calc((100% - 24px) / 2) !important;
-    max-width: calc((100% - 24px) / 2) !important;
-  }
-}
-
-/* Desktop: 3 cards */
-@media (min-width: 1024px) {
-  .services .swiper-slide {
-    width: calc((100% - 76px) / 3) !important;
-    flex: 0 0 calc((100% - 76px) / 3) !important;
-    max-width: calc((100% - 76px) / 3) !important;
-  }
-}
 
 /* ========================================================== */
                   /* RESPONSIVIDADE DA NAV */
