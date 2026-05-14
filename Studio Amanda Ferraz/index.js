@@ -1,0 +1,166 @@
+const express = require('express');
+const fileUpload = require('express-fileupload');
+const { engine } = require('express-handlebars');
+const mysql = require('mysql2');
+const fs = require('fs');
+
+const app = express();
+const session = require('express-session');
+const flash = require('connect-flash');
+
+
+app.use('/img', express.static('./img'));
+app.use('/css', express.static('./css'));
+app.use('/js', express.static('./js'));
+app.use('/imagem', express.static('./imagem'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(fileUpload());
+app.use(session({
+    secret: 'segredo',
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.use(flash());
+
+app.engine('handlebars', engine({
+    defaultLayout: false
+}));
+app.set('view engine', 'handlebars');
+app.set('views', './views');
+
+
+const conexao = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'studioamandaferraz'
+});
+
+conexao.connect(function(erro){
+    if(erro) throw erro;
+    console.log('Conexão efetuada!');
+});
+
+app.get('/', function(req, res){
+    let sql = 'SELECT * FROM tbservico';
+
+    conexao.query(sql, function(erro, resultado){
+        if(erro) throw erro;
+
+        console.log('Todos os serviços:', resultado); // vê o que vem do banco
+
+        const alisamento = resultado.filter(servico =>
+            servico.categoria === 'alisamento'
+        );
+
+        const cilios = resultado.filter(servico =>
+            servico.categoria === 'cilios'
+        );
+
+        console.log('Alisamento:', alisamento); // vê se o filtro funciona
+        console.log('Cílios:', cilios);
+
+        res.render('home', { alisamento, cilios });
+    });
+});
+
+app.get('/gerenciar', function(req, res){
+
+    res.render('gerenciar');
+});
+
+app.get('/agendar', function(req, res){
+
+    res.render('agendar');
+});
+
+app.get('/visualizar', function(req, res){
+
+    let sql = 'SELECT * FROM tbservico';
+
+    conexao.query(sql, function(erro, resultado){
+        if(erro) throw erro;
+        
+        res.render('visualizar', {
+            servicos: resultado
+        });
+
+    });
+});
+
+app.get('/dashboardhome', function(req, res){
+    res.render('dashboardhome');
+});
+
+app.post('/cadastrar', function(req, res){
+    let titulo = req.body.titulo;
+    let valor = req.body.valor;
+    let categoria = req.body.categoria;
+    let descricao = req.body.descricao;
+    let imagem = req.files.imagem.name;
+
+    let sql = `INSERT INTO tbservico (nome, valor, descricao, imagem, categoria) VALUES ('${titulo}', ${valor}, '${descricao}', '${imagem}',  '${categoria}')`;
+
+    conexao.query(sql, function(erro, resultado){
+        if(erro) throw erro;
+        req.files.imagem.mv(__dirname + '/imagem/' + req.files.imagem.name);
+        console.log(resultado);
+        req.flash('mensagem', 'Serviço cadastrado com sucesso!');
+        res.redirect('/visualizar'); 
+    });
+});
+
+
+
+app.get('/remover/:id/:imagem', function(req, res){
+    let sql = `DELETE FROM tbservico WHERE id = ${req.params.id}`;
+    conexao.query(sql, function(erro, resultado){
+        if(erro) throw erro;
+        fs.unlink(__dirname + '/imagem/' + req.params.imagem, (erro_imagem) => {
+            if(erro_imagem) console.log('Falha ao remover imagem: ' + erro_imagem);
+        });
+        res.redirect('/visualizar');
+    });
+});
+
+app.get('/formularioAlterar/:id', function(req, res){
+    let sql = `SELECT * FROM tbservico WHERE id = ${req.params.id}`;
+
+    conexao.query(sql, function(erro, resultado){
+        if(erro) throw erro;
+        res.render('formularioAlterar', {servico: resultado[0]});
+    });
+});
+
+app.post('/editar', function(req, res){
+    let id = req.body.id;
+    let titulo = req.body.titulo;
+    let valor = req.body.valor;
+    let descricao = req.body.descricao;
+    let imagem_atual = req.body.imagem_atual;
+
+ if (req.files && req.files.imagem) {
+        let imagem = req.files.imagem;
+        imagem.mv(__dirname + '/imagem/' + imagem.name);
+
+        let sql = `UPDATE tbservico SET nome='${titulo}', valor=${valor}, descricao='${descricao}', imagem='${imagem.name}' WHERE id=${id}`;
+        conexao.query(sql, function(erro) {
+            if (erro) throw erro;
+            res.redirect('/visualizar');
+        });
+    } else {
+        let sql = `UPDATE tbservico SET nome='${titulo}', valor=${valor}, descricao='${descricao}' WHERE id=${id}`;
+        conexao.query(sql, function(erro) {
+            if (erro) throw erro;
+            res.redirect('/visualizar');
+        });
+    }
+
+});
+
+app.listen(8081, function(){
+    console.log('Servidor rodando na porta 8081');
+});
