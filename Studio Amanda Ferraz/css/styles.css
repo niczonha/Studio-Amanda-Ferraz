@@ -15,7 +15,7 @@ html {
 
 body{
    font-family: "Urbanist", sans-serif;
-   background-color: var(--creme);
+    background-color: var(--creme);
    padding-top: 75px; /*Pra nav não engolir a beira do site */
 }
 
@@ -33,20 +33,16 @@ html, body {
 .navbar {
   width: 100%;
   height: 90px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background: #a7510f;
-
   padding: 0 40px;
-
   position: fixed;
   top: 0;
   left: 0;
-
   z-index: 1000;
+  
 }
 
 /* LOGO */
@@ -78,19 +74,14 @@ html, body {
 .btn-agendar {
   background: #f5f0e6;
   color: #8b4513;
-
   border: none;
-
   padding: 10px 18px;
-
   font-size: 16px;
   font-weight: bold;
-
   cursor: pointer;
-
   border-radius: 6px;
-
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .btn-agendar:hover {
@@ -102,25 +93,18 @@ html, body {
 .hamburguer {
   width: 35px;
   height: 30px;
-
   display: none;
-
   flex-direction: column;
   justify-content: space-between;
-
   cursor: pointer;
-
   z-index: 3000;
 }
 
 .hamburguer span {
   width: 100%;
   height: 4px;
-
   background: white;
-
   border-radius: 5px;
-
   transition: 0.4s;
 }
 
@@ -275,273 +259,159 @@ html, body {
       width: 100%;
     }
 
-    /* ---- CARDS DOS SERVIÇOS ---- */
-    .swiper-section {
-      padding: 0 50px 3rem;
-      position: relative;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
+  .carrossel-wrapper{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  width:100%;
+  margin-top:50px;
+}
 
-    .slide-content {
-      overflow: hidden;
-      padding: 12px 4px 92px;
-    }
+.carrossel-track-container{
+  overflow:hidden;
+  width:100%;
+}
 
-    .services .swiper-wrapper {
-      align-items: stretch;
-    }
+.carrossel-track{
+  display:flex;
+  gap:24px;
+  transition:0.5s;
+}
 
-    .services .swiper-card {
-      width: 100%;
-      max-width: 360px;
-      min-height: 520px;
-      margin: 0 auto;
-      border-radius: 8px;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      padding: 10px;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.08);
-      overflow: hidden;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    .services .swiper-card::before {
-      content: none;
-      display: none;
-    }
-
-    .services .swiper-card > * {
-      width: 100%;
-      max-width: none;
-      position: relative;
-      z-index: 1;
-      box-sizing: border-box;
-    }
-
-    .services .swiper-image-content {
-      width: 100%;
-      padding: 0;
-      flex: 0 0 auto;
-    }
-
-    .services .swiper-overlay {
-      display: none;
-    }
-
-   
-    .services .swiper-card-image {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      height: auto;
-      border-radius: 7px;
-      overflow: hidden;
-      background: #f5f0e6;
-      flex: 0 0 auto;
-    }
-
-    .services .swiper-card-image img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      border-radius: 0;
-    }
-
-    .services .swiper-card-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex: 1;
-      justify-content: space-between;
-      padding: 12px 2px 0;
-      gap: 8px;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    .services .swiper-card-content h3 {
-      font-size: 36px;
-      font-weight: 700;
-      color: #A7510F;
-      margin: 0;
-      line-height: 1.15;
-    }
-
-    .services .swiper-card-content p {
-      font-size: 26px;
-      color: #4f4f4f;
-      line-height: 1.2;
-      margin: 0;
-   
-    }
-    .services .swiper-card-content b {
-      font-size: 26px;
-      color: #4f4f4f;
-      line-height: 1.2;
-      margin: 0;
-      margin-top: 10px;
-       margin-bottom: 10px;
-    }
-
-
-    .services .swiper-card-content .service-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 100px;
-      margin-top: 2px;
-      padding: 16px 28px;
-      border-radius: 4px;
-      background: #A7510F;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background 0.2s ease, transform 0.2s ease;
-       font-size: 26px;
-    }
-
-    .services .swiper-card-content .service-btn:hover {
-      background: #863B0A;
-      transform: translateY(-1px);
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #A7510F !important;
-      width: 26px;
-      height: 26px;
-      border: 1px solid #A7510F !important;
-      border-radius: 50%;
-      background: #fff;
-    }
-
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-      font-size: 18px;
-      font-weight: 700;
-      color: #A7510F !important;
-    }
-
-    .swiper-pagination {
-      display: none !important;
-    }
-
-    @media (max-width: 768px) {
-      .services {
-        margin-top: 5rem;
-      }
-
-      .swiper-section {
-        padding: 0 40px 2rem;
-      }
-
-     .swiper-button-next,
-     .swiper-button-prev {
-         width: 28px;
-       height: 28px;
-      }
-
-     .swiper-button-next {
-         right: 4px;
+ .card-servico {
+            flex: 0 0 calc(33.333% - 0.85rem); /* 3 cards visíveis */
+            text-align: center;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s, box-shadow 0.25s;
+            min-width: 0;
         }
 
-      .swiper-button-prev {
-            left: 4px;
-          }
 
-      .slide-content {
-        padding: 12px 6px 72px;
-      }
+        .card-servico:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
 
-      .services .swiper-card {
-        max-width: none;
-        min-height: auto;
-        padding: 8px;
-      }
+        .card-servico-img {
+            width: 100%;
+            aspect-ratio: 3/2.8;
+            object-fit: cover;
+            display: block;
+        }
 
-      .services .swiper-card-image {
-        aspect-ratio: 3 / 4;
-      }
 
-      .services .swiper-card-content {
-        min-height: 92px;
-        padding: 8px 2px 0;
-        gap: 5px;
-      }
 
-      .services .swiper-card-content h3 {
-        font-size: 22px;
-      }
+.card-servico-titulo{
+  font-size:28px;
+  font-weight:700;
+  color:#A7510F;
+}
 
-      .services .swiper-card-content p {
-        font-size: 16px;
-        line-height: 1.6;
+.card-servico-desc{
+  font-size:18px;
+  color:#101010;
+  margin:15px 0;
+}
 
-    
-      }
+.card-servico-valor{
+  font-size:24px;
+  font-weight:700;
+  color:#555;
+}
 
-       .services .swiper-card-content b {
-        font-size: 20px;
-        line-height: 1.6;
-      }
+.btn-nav {
+            background-color: #A7510F;
+            color: #F5F0E6;
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: background 0.2s, transform 0.15s;
+            
+        }
 
-      .services .swiper-card-content .service-btn {
-        min-width: 100px;
-        padding: 9px 18px;
-        font-size: 14px;
-        margin-top: 6px;
-      }
-    }
+        .btn-nav:hover {
+            background-color: #8a420c;
+            transform: scale(1.08);
+        }
 
-    @media (max-width: 480px) {
-      .services {
-        margin-top: 4.5rem;
-      }
+        .btn-nav:disabled {
+            background-color: #ccc;
+            cursor: default;
+            transform: none;
+        }
+        .carrossel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.2rem;
+        }
 
-      .swiper-section {
-        padding: 0 20px 2rem;
-      }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: background 0.2s, transform 0.2s;
+        }
 
-      .slide-content {
-        padding: 12px 6px 68px;
-      }
+        .dot.ativo {
+            background: #A7510F;
+            transform: scale(1.25);
+        }
 
-      .services .swiper-card {
-        padding: 7px;
-      }
+    .area-carrossel-home {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 50px;
+  }
 
-      .services .swiper-card-content {
-        min-height: 88px;
-      }
+  .area-carrossel-home .carrossel-track-container {
+    overflow: hidden;
+    flex: 1;
+  }
 
-      .swiper-button-next,
-      .swiper-button-prev {
-        display: flex;
-        width: 24px;
-        height: 24px;
-      }
+         @media (max-width: 900px) {
+            .card-servico {
+                flex: 0 0 calc(50% - 0.6rem);
+            }
+        }
 
-      .swiper-button-next {
-        right: 4px;
-      }
+        /* 1 card em celular */
+        @media (max-width: 560px) {
+            .card-servico {
+                flex: 0 0 100%;
+            }
 
-      .swiper-button-prev {
-        left: 4px;
-      }
-    }
+            .secao-visualizar {
+                padding: 1.5rem 1rem 2rem;
+                margin: 2rem auto;
+            }
 
-/* --- DESKTOP --- */
+            .btn-nav {
+                width: 36px;
+                height: 36px;
+                font-size: 0.95rem;
+            }
+        }
+
 .ratings {
   margin-top: 3rem;
   padding: 2.5rem 0 1.5rem;
@@ -555,8 +425,6 @@ html, body {
   color: var(--marrom);
   text-transform: uppercase;
 }
-
-
 
 #reviews {
   display: grid;
@@ -747,9 +615,6 @@ font-size: 30px;
 }
 
 
-
-
-
 @media (max-width: 768px) {
     #map {
         width: 100%;    
@@ -883,11 +748,13 @@ font-size: 30px;
   align-items: stretch;
 }
 
-
-
 /* ========================================================== */
                   /* RESPONSIVIDADE DA NAV */
 /* ========================================================== */
+
+
+
+
 
 @media (max-width: 768px) {
 
@@ -961,6 +828,7 @@ font-size: 30px;
     display: block;
     font-size: 20px;
     padding: 12px 24px;
+    color: #A7510F;
   }
 }
 
@@ -973,9 +841,7 @@ font-size: 30px;
   }
 }
 
-/* ========================= */
-/* RESPONSIVO SERVIÇOS */
-/* ========================= */
+
 
 @media screen and (max-width: 768px) {
 
@@ -1106,3 +972,28 @@ font-size: 30px;
     margin-top: 10px;
   }
 }
+
+
+ .service-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 100px;
+      margin-top: 2px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background: #A7510F;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.2s ease, transform 0.2s ease;
+       font-size: 26px;
+    }
+
+     .service-btn:hover {
+    color:#D08C60
+    }
+
