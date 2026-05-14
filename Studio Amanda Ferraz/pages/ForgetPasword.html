@@ -16,15 +16,17 @@
             </div>
 
             <div class="dados">
-                <input type="email" placeholder="Email" >
+                <input type="email" id="email" placeholder="Email">
+                <p id="erro" style="color: red; font-size: 0.85rem; display: none;"></p>
             </div>
 
             <div class="btn">
-                <a href="../pages/verifyEmail.html"><button type="submit" onclick="sendEmail()">Enviar</button></a> <!--talvez de para criar uma function para enviar e verificar o email-->
-                <button><a href="../pages/login.html">Cancelar</a></button> 
+                <button type="submit" onclick="sendEmail()">Enviar</button> <!--talvez de para criar uma function para enviar e verificar o email-->
+                <button><a href="../pages/login.html">Cancelar</a></button>
             </div>
         </div>
 
     </div>
+    <script src="../js/forgetPassword.js"></script>
 </body>
 </html>
