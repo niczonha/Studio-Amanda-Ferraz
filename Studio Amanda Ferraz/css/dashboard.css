@@ -186,6 +186,8 @@ body{
 
 
 
+
+
 #cor-verde{
     color: #41AF33;
 }
@@ -650,4 +652,428 @@ button{
     color: #8a420c;
      font-weight: bold;
 
+}
+
+ .secao-visualizar {
+            width: 100%;
+            max-width: 1100px;
+            margin: 5% auto 2rem;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.24);
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        .secao-visualizar h2 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #2A2424;
+            margin-bottom: 1.8rem;
+        }
+
+        /* ───────────────────────────────────────────
+           WRAPPER DO CARROSSEL
+        ─────────────────────────────────────────── */
+        .carrossel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .carrossel-track-container {
+            overflow: hidden;
+            flex: 1;
+            border-radius: 16px;
+        }
+
+        .carrossel-track {
+            display: flex;
+            gap: 1.2rem;
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        /* ───────────────────────────────────────────
+           CARD DE SERVIÇO
+        ─────────────────────────────────────────── */
+        .card-servico {
+            flex: 0 0 calc(33.333% - 0.85rem); /* 3 cards visíveis */
+            background-color: #A7510F;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s, box-shadow 0.25s;
+            min-width: 0;
+        }
+
+        .card-servico:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+
+        .card-servico-img {
+            width: 100%;
+            aspect-ratio: 3/2.8;
+            object-fit: cover;
+            display: block;
+        }
+        .card-servico-categoria{
+            color: #fcf7f77a;
+
+        }
+
+        .card-servico-valor{
+            color:#b4e0ae
+        }
+
+        /* placeholder quando não tem imagem */
+        .card-servico-img-placeholder {
+            width: 100%;
+            aspect-ratio: 3/2.8;
+            background: #8a420c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #F5F0E6cc;
+            font-size: 2.5rem;
+            gap: 0.4rem;
+        }
+
+        .card-servico-img-placeholder span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .card-servico-body {
+            padding: 1rem 1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            flex: 1;
+        }
+
+        .card-servico-titulo-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .card-servico-titulo {
+            color: #F5F0E6;
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .card-servico-acoes {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-acao {
+            background: none;
+            border: none;
+            color: #F5F0E6;
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 2px 4px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            line-height: 1;
+        }
+
+        .btn-acao:hover {
+            background: rgba(255,255,255,0.18);
+        }
+
+        .btn-acao.excluir:hover {
+            color: #ff6b6b;
+        }
+
+        .card-servico-desc {
+            color: #F5F0E6cc;
+            font-size: 0.83rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ───────────────────────────────────────────
+           BOTÕES DE NAVEGAÇÃO
+        ─────────────────────────────────────────── */
+        .btn-nav {
+            background-color: #A7510F;
+            color: #F5F0E6;
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .btn-nav:hover {
+            background-color: #8a420c;
+            transform: scale(1.08);
+        }
+
+        .btn-nav:disabled {
+            background-color: #ccc;
+            cursor: default;
+            transform: none;
+        }
+
+        /* ───────────────────────────────────────────
+           DOTS
+        ─────────────────────────────────────────── */
+        .carrossel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .dot.ativo {
+            background: #A7510F;
+            transform: scale(1.25);
+        }
+
+        /* ───────────────────────────────────────────
+           ESTADO VAZIO
+        ─────────────────────────────────────────── */
+        .estado-vazio {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #aaa;
+        }
+
+        .estado-vazio i {
+            font-size: 3rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .estado-vazio p {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .estado-vazio a {
+            color: #A7510F;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .estado-vazio a:hover {
+            text-decoration: underline;
+            background: none;
+        }
+
+        .formulario_adicionar select {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 24px;
+    border: 1px solid #A7510F;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #fff;
+    color: #2A2424;
+    font-family: "Urbanist", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none; /* remove a setinha padrão do navegador */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23A7510F' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    padding-right: 2.5rem;
+}
+
+.formulario_adicionar select:focus {
+    border-color: #863B0A;
+    box-shadow: 0 0 0 2px rgba(167, 81, 15, 0.15);
+}
+
+        /* ───────────────────────────────────────────
+           RESPONSIVO
+        ─────────────────────────────────────────── */
+
+        /* 2 cards em telas médias */
+        @media (max-width: 900px) {
+            .card-servico {
+                flex: 0 0 calc(50% - 0.6rem);
+            }
+        }
+
+        /* 1 card em celular */
+        @media (max-width: 560px) {
+            .card-servico {
+                flex: 0 0 100%;
+            }
+
+            .secao-visualizar {
+                padding: 1.5rem 1rem 2rem;
+                margin: 2rem auto;
+            }
+
+            .btn-nav {
+                width: 36px;
+                height: 36px;
+                font-size: 0.95rem;
+            }
+        }
+
+#modal-alterar {
+    border: none;
+    border-radius: 24px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+
+#modal-alterar::backdrop {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+}
+
+#modal-alterar h2 {
+    text-align: center;
+    color: #A7510F;
+    margin-bottom: 1.5rem;
+}
+
+#modal-alterar label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+#modal-alterar input[type="text"],
+#modal-alterar input[type="number"] {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 24px;
+    border: 1px solid #A7510F;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Urbanist", sans-serif;
+    font-size: 1rem;
+}
+
+.inserir-img-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.inserir-img-modal img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+}        
+
+#modal-alterar {
+    border: none;
+    border-radius: 24px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+#modal-alterar::backdrop {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+}
+
+#modal-alterar h2 {
+    text-align: center;
+    color: #A7510F;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+#modal-alterar label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+#modal-alterar input[type="text"],
+#modal-alterar input[type="number"] {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 24px;
+    border: 1px solid #A7510F;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Urbanist", sans-serif;
+    font-size: 1rem;
+}
+
+#modal-alterar #alterar-preview {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    #modal-alterar {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+
+    #modal-alterar h2 {
+        font-size: 1.1rem;
+    }
+
+    #modal-alterar input[type="text"],
+    #modal-alterar input[type="number"] {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .modal-botoes {
+        flex-direction: column;
+    }
+
+    .modal-botoes .btn-confirmar,
+    .modal-botoes .btn-cancelar {
+        width: 100%;
+    }
 }
