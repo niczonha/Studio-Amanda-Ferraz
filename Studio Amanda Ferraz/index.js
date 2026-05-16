@@ -35,7 +35,7 @@ app.set('views', './views');
 const conexao = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'studioamandaferraz'
 });
 
@@ -52,25 +52,27 @@ app.get('/', function(req, res){
 
         console.log('Todos os serviços:', resultado); // vê o que vem do banco
 
-        const alisamento = resultado.filter(servico =>
-            servico.categoria === 'alisamento'
+        const cabelo = resultado.filter(servico =>
+            servico.categoria === 'cabelo'
         );
 
         const cilios = resultado.filter(servico =>
             servico.categoria === 'cilios'
         );
 
-        console.log('Alisamento:', alisamento); // vê se o filtro funciona
+        console.log('Cabelo:', cabelo); // vê se o filtro funciona
         console.log('Cílios:', cilios);
 
-        res.render('home', { alisamento, cilios });
+        res.render('home', { cabelo, cilios });
     });
 });
 
 app.get('/gerenciar', function(req, res){
-
-    res.render('gerenciar');
-});
+    let mensagem = req.flash('mensagem');
+    res.render('gerenciar', { 
+        mensagem: mensagem.length > 0 ? mensagem[0] : null 
+    });
+}); 
 
 app.get('/agendar', function(req, res){
 
@@ -84,9 +86,11 @@ app.get('/visualizar', function(req, res){
     conexao.query(sql, function(erro, resultado){
         if(erro) throw erro;
         
-        res.render('visualizar', {
-            servicos: resultado
-        });
+    let mensagem = req.flash('mensagem'); 
+            res.render('visualizar', {
+                servicos: resultado,
+                mensagem: mensagem.length > 0 ? mensagem[0] : null 
+            });
 
     });
 });
@@ -109,7 +113,7 @@ app.post('/cadastrar', function(req, res){
         req.files.imagem.mv(__dirname + '/imagem/' + req.files.imagem.name);
         console.log(resultado);
         req.flash('mensagem', 'Serviço cadastrado com sucesso!');
-        res.redirect('/visualizar'); 
+       res.redirect('/gerenciar');
     });
 });
 
@@ -122,6 +126,7 @@ app.get('/remover/:id/:imagem', function(req, res){
         fs.unlink(__dirname + '/imagem/' + req.params.imagem, (erro_imagem) => {
             if(erro_imagem) console.log('Falha ao remover imagem: ' + erro_imagem);
         });
+        req.flash('mensagem', 'Serviço removido com sucesso!');
         res.redirect('/visualizar');
     });
 });
@@ -149,12 +154,14 @@ app.post('/editar', function(req, res){
         let sql = `UPDATE tbservico SET nome='${titulo}', valor=${valor}, descricao='${descricao}', imagem='${imagem.name}' WHERE id=${id}`;
         conexao.query(sql, function(erro) {
             if (erro) throw erro;
+            req.flash('mensagem', 'Serviço editado com sucesso!'); 
             res.redirect('/visualizar');
         });
     } else {
         let sql = `UPDATE tbservico SET nome='${titulo}', valor=${valor}, descricao='${descricao}' WHERE id=${id}`;
         conexao.query(sql, function(erro) {
             if (erro) throw erro;
+            req.flash('mensagem', 'Serviço editado com sucesso!'); 
             res.redirect('/visualizar');
         });
     }
