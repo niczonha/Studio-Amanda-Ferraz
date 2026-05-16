@@ -3,12 +3,15 @@ const fileUpload = require('express-fileupload');
 const { engine } = require('express-handlebars');
 const mysql = require('mysql2');
 const fs = require('fs');
+const cors = require('cors');
+require('dotenv').config({ path: './js/.env' });
 
 const app = express();
 const session = require('express-session');
 const flash = require('connect-flash');
+const authRoutes = require('./js/authroutes');
 
-
+app.use(cors());
 app.use('/img', express.static('./img'));
 app.use('/css', express.static('./css'));
 app.use('/js', express.static('./js'));
@@ -31,12 +34,12 @@ app.engine('handlebars', engine({
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-
+// Conexão com o Banco de dados 
 const conexao = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'studioamandaferraz'
+    database: 'StudioAmandaFerraz'
 });
 
 conexao.connect(function(erro){
@@ -44,13 +47,23 @@ conexao.connect(function(erro){
     console.log('Conexão efetuada!');
 });
 
+// Rotas de Auth
+app.use('/api/auth', authRoutes);
+
+// Rotas das Views de Login
+app.get('/login', (req, res) => res.render('login'));
+app.get('/forgot-password', (req, res) => res.render('ForgetPassword'));
+app.get('/verify-email', (req, res) => res.render('verifyEmail'));
+app.get('/reset-password', (req, res) => res.render('RefindPassword'));
+
+// Rotas do Dashboard 
 app.get('/', function(req, res){
     let sql = 'SELECT * FROM tbservico';
 
     conexao.query(sql, function(erro, resultado){
         if(erro) throw erro;
 
-        console.log('Todos os serviços:', resultado); // vê o que vem do banco
+        console.log('Todos os serviços:', resultado);
 
         const cabelo = resultado.filter(servico =>
             servico.categoria === 'cabelo'
@@ -60,7 +73,7 @@ app.get('/', function(req, res){
             servico.categoria === 'cilios'
         );
 
-        console.log('Cabelo:', cabelo); // vê se o filtro funciona
+        console.log('Cabelo:', cabelo);
         console.log('Cílios:', cilios);
 
         res.render('home', { cabelo, cilios });
@@ -75,23 +88,20 @@ app.get('/gerenciar', function(req, res){
 }); 
 
 app.get('/agendar', function(req, res){
-
     res.render('agendar');
 });
 
 app.get('/visualizar', function(req, res){
-
     let sql = 'SELECT * FROM tbservico';
 
     conexao.query(sql, function(erro, resultado){
         if(erro) throw erro;
         
-    let mensagem = req.flash('mensagem'); 
-            res.render('visualizar', {
-                servicos: resultado,
-                mensagem: mensagem.length > 0 ? mensagem[0] : null 
-            });
-
+        let mensagem = req.flash('mensagem'); 
+        res.render('visualizar', {
+            servicos: resultado,
+            mensagem: mensagem.length > 0 ? mensagem[0] : null 
+        });
     });
 });
 
@@ -113,11 +123,9 @@ app.post('/cadastrar', function(req, res){
         req.files.imagem.mv(__dirname + '/imagem/' + req.files.imagem.name);
         console.log(resultado);
         req.flash('mensagem', 'Serviço cadastrado com sucesso!');
-       res.redirect('/gerenciar');
+        res.redirect('/gerenciar');
     });
 });
-
-
 
 app.get('/remover/:id/:imagem', function(req, res){
     let sql = `DELETE FROM tbservico WHERE id = ${req.params.id}`;
@@ -147,7 +155,7 @@ app.post('/editar', function(req, res){
     let descricao = req.body.descricao;
     let imagem_atual = req.body.imagem_atual;
 
- if (req.files && req.files.imagem) {
+    if (req.files && req.files.imagem) {
         let imagem = req.files.imagem;
         imagem.mv(__dirname + '/imagem/' + imagem.name);
 
@@ -165,9 +173,8 @@ app.post('/editar', function(req, res){
             res.redirect('/visualizar');
         });
     }
-
 });
 
 app.listen(8081, function(){
-    console.log('Servidor rodando na porta 8081');
+    console.log('Servidor rodando na porta http://localhost:8081');
 });

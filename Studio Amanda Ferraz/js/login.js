@@ -12,7 +12,7 @@ async function acessar() {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/api/auth/login", {
+    const response = await fetch("http://localhost:8081/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password: senha }),
@@ -29,7 +29,7 @@ async function acessar() {
     // Salva o token e redireciona pro dashboard
     localStorage.setItem("token", data.token);
     localStorage.setItem("user", JSON.stringify(data.user));
-    window.location.href = "../pages/dashboard.html"; // ajusta o caminho se necessário
+    window.location.href = "../dashboardhome"; // ajusta o caminho se necessário
 
   } catch (err) {
     erro.textContent = "Não foi possível conectar ao servidor.";
