@@ -7,9 +7,7 @@ const db = require("./db");
 const { sendPasswordResetEmail } = require("./emailService");
 require("dotenv").config();
 
-// ─── LOGIN ────────────────────────────────────────────────────────────────────
-// POST /api/auth/login
-// Body: { email, password }
+// login
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -45,9 +43,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// ─── SOLICITAR RECUPERAÇÃO DE SENHA ──────────────────────────────────────────
-// POST /api/auth/forgot-password
-// Body: { email }
+// solicitar redefinição de senha
+
 router.post("/forgot-password", async (req, res) => {
   const { email } = req.body;
 
@@ -84,9 +81,7 @@ router.post("/forgot-password", async (req, res) => {
   }
 });
 
-// ─── REDEFINIR SENHA ──────────────────────────────────────────────────────────
-// POST /api/auth/reset-password
-// Body: { token, newPassword }
+// redefinir senha
 router.post("/reset-password", async (req, res) => {
   const { token, newPassword } = req.body;
 
