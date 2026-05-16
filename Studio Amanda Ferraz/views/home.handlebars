@@ -127,15 +127,15 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
 
  <section id="alisamento" class="services">
   <div class="header-alisamento">
-    <h2 class="title">NOSSOS SERVIÇOS DE ALISAMENTO</h2>
+    <h2 class="title">NOSSOS SERVIÇOS DE CABELO</h2>
   </div>
 
   <div class="area-carrossel-home">
-    <button class="btn-nav" id="prev-alisamento" onclick="moverCarrossel('alisamento', -1)">❮</button>
+    <button class="btn-nav" id="prev-cabelo" onclick="moverCarrossel('cabelo', -1)">❮</button>
 
     <div class="carrossel-track-container">
-      <div class="carrossel-track" id="track-alisamento">
-        {{#each alisamento}}
+      <div class="carrossel-track" id="track-cabelo">
+        {{#each cabelo}}
         <div class="card-servico">
           <img class="card-servico-img" src="/imagem/{{imagem}}" alt="{{nome}}">
           <div class="card-servico-body">
@@ -149,9 +149,9 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
       </div>
     </div>
 
-    <button class="btn-nav" id="next-alisamento" onclick="moverCarrossel('alisamento', 1)">❯</button>
+    <button class="btn-nav" id="next-cabelo" onclick="moverCarrossel('cabelo', 1)">❯</button>
   </div>
-  <div class="carrossel-dots" id="dots-alisamento"></div>
+  <div class="carrossel-dots" id="dots-cabelo"></div>
 </section>
 
  <section id="cilios" class="services">
@@ -337,7 +337,7 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
   document.addEventListener('touchend', e => {
     const diff = touchStartX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
-      ['alisamento', 'cilios'].forEach(id => {
+      ['cabelo', 'cilios'].forEach(id => {
         const track = document.getElementById(`track-${id}`);
         if (track && track.closest(':hover')) moverCarrossel(id, diff > 0 ? 1 : -1);
       });
@@ -349,14 +349,14 @@ Uma de nós é especializada em cabelo, cuidando de cortes, cores e tratamentos.
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      ['alisamento', 'cilios'].forEach(id => {
+      ['cabelo', 'cilios'].forEach(id => {
         renderizarDots(id);
         aplicarPosicao(id, false);
       });
     }, 150);
   });
 
-  initCarrossel('alisamento');
+  initCarrossel('cabelo');
   initCarrossel('cilios');
 </script>
 
